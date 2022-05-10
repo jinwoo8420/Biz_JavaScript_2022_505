@@ -1,30 +1,117 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Subway Map</title>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.9.0.min.js"
+    ></script>
+    <script type="text/javascript" src="jquery.subwayMap-0.5.3.js"></script>
+    <style type="text/css">
+      body {
+        font-family: Verdana;
+        font-size: 8pt;
+      }
+
+      /* The main DIV for the map */
+      .subway-map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: white;
+      }
+
+      /* Text labels */
+      .text {
+        text-decoration: none;
+        color: black;
+      }
+
+      #legend {
+        float: left;
+        width: 250px;
+        height: 400px;
+      }
+
+      #legend div {
+        height: 25px;
+      }
+
+      #legend span {
+        margin: 5px 5px 5px 0;
+      }
+      .subway-map span {
+        margin: 5px 5px 5px 0;
+      }
+    </style>
   </head>
+
+  <!-- 
+        data-labelPos 동서남북 
+        data-coords XY 좌표
+        data-marker 역 구분 (환승역 / 일반역)
+        data-dir 곡선    
+    -->
+
   <body>
-    <div id="mapImg" style="position: relative; width: 500px">
-      <a
-        href="http://map.kakao.com/?REGION=01&STARTNAME=&ENDNAME=&STARTID=&ENDID=&URLLINK=true&target=subway"
-        target="_blank"
-        ><img
-          src="http://map.kakao.com/subway/linemap/preview/seoul.gif"
-          width="498"
-          height="400"
-          border="0"
-          style="border: 1px solid #ccc"
-      /></a>
-      <div
-        class="tpText"
-        style="background:url(//t1.daumcdn.net/localimg/localimages/07/2007/map/2007/arrow_yl.gif) 7px 9px no-repeat; background-color:#000; position:absolute; top:0px; left:0px; opacity:0.7; filter:alpha(opacity=70); width:100%; padding:5px 0 3px 0; color:#fff; font-size:12px; font-family:돋움; word-break:break-all; overflow:hidden; line-height:17px;text-indent:15px;'"
-      >
-        아래를 클릭하시면, <span style="color: #ffc228"><b></b></span>수도권
-        지하철 노선도를 크게 보실 수 있습니다.
-      </div>
+    <div
+      class="subway-map"
+      data-columns="35"
+      data-rows="20"
+      data-cellSize="25"
+      data-legendId="legend"
+      data-textClass="text"
+      data-gridNumbers="true"
+      data-grid="false"
+      data-lineWidth="8"
+    >
+      <ul data-color="#36AEFF" data-label="jQuery Widgets">
+        <li data-coords="2,2"><a>1</a></li>
+        <li data-coords="3,2"><a>2</a></li>
+        <li data-coords="5,2"><a>3</a></li>
+        <li data-coords="7,2"><a>4</a></li>
+        <li data-coords="9,2"><a>5</a></li>
+        <li data-coords="11,2"><a>6</a></li>
+        <li data-coords="13,2"><a>7</a></li>
+        <li data-coords="15,2"><a>8</a></li>
+        <li data-coords="17,2"><a>9</a></li>
+        <li data-coords="19,2"><a>10</a></li>
+        <li data-coords="21,2"><a>11</a></li>
+        <li data-coords="23,2"><a>12</a></li>
+        <li data-coords="25,2"><a>13</a></li>
+        <li data-coords="27,2"><a>14</a></li>
+        <li data-coords="29,2"><a>15</a></li>
+        <li data-coords="30,3" data-dir="E"></li>
+        <li data-coords="30,4"><a>16</a></li>
+        <li data-coords="30,6"><a>17</a></li>
+        <li data-coords="30,8"><a>18</a></li>
+        <li data-coords="30,10"><a>19</a></li>
+        <li data-coords="29,11" data-dir="S"></li>
+        <li data-coords="28,11"><a>20</a></li>
+        <li data-coords="26,11"><a>21</a></li>
+        <li data-coords="24,11"><a>22</a></li>
+        <li data-coords="22,11"><a>23</a></li>
+        <li data-coords="20,11"><a>24</a></li>
+        <li data-coords="18,11"><a>25</a></li>
+        <li data-coords="16,11"><a>26</a></li>
+        <li data-coords="14,11"><a>27</a></li>
+        <li data-coords="12,11"><a>28</a></li>
+        <li data-coords="10,11"><a>29</a></li>
+        <li data-coords="8,11"><a>30</a></li>
+        <li data-coords="6,11"><a>31</a></li>
+        <li data-coords="4,11"><a>32</a></li>
+        <li data-coords="2,11"><a>33</a></li>
+        <li data-coords="1,10" data-dir="W"></li>
+        <li data-coords="1,9"><a>34</a></li>
+        <li data-coords="1,7"><a>35</a></li>
+        <li data-coords="1,5"><a>36</a></li>
+        <li data-coords="1,3"><a>37</a></li>
+        <li data-coords="2,2" data-dir="N"></li>
+      </ul>
     </div>
+
+    <script type="text/javascript">
+      $(".subway-map").subwayMap({ debug: true });
+    </script>
   </body>
 </html>
