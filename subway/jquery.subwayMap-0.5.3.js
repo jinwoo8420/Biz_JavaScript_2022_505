@@ -622,12 +622,21 @@ THE SOFTWARE.
         (textClass == ""
           ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;"
           : "") +
+<<<<<<< HEAD
         // "width:100px;" +
         (pos != "" ? pos : "") +
         ";position:absolute;top:" +
         (y + el.position().top - (topOffset > 0 ? topOffset : 0) - 15) +
         "px;left:" +
         (x + el.position().left + 40) +
+=======
+        "width:100px;" +
+        (pos != "" ? pos : "") +
+        ";position:absolute;top:" +
+        (y + el.position().top - (topOffset > 0 ? topOffset : 0)) +
+        "px;left:" +
+        (x + el.position().left) +
+>>>>>>> ab3c76eb974fc906968e1470064b1b8b9f8e937c
         "px;z-index:3000;'";
       if (data.link != "")
         $(
