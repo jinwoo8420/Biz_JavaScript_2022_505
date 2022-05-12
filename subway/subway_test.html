@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height: 930px">
   <head>
     <title>Subway Map</title>
     <script
@@ -14,25 +14,19 @@
 
       /* The main DIV for the map */
       .subway-map {
-        display: flex;
-        justify-content: left;
-        align-items: center;
-        min-height: 100vh;
+        margin: 0;
+        width: 500px;
+        height: 410px;
         background-color: white;
       }
 
       /* Text labels */
       .text {
-        /* transform: translate(100%); */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 20vh;
         text-decoration: none;
         color: black;
       }
 
-      #legend {
+      /* #legend {
         float: left;
         width: 250px;
         height: 400px;
@@ -44,7 +38,7 @@
 
       #legend span {
         margin: 5px 5px 5px 0;
-      }
+      } */
       .subway-map span {
         margin: 5px 5px 5px 0;
       }
@@ -53,6 +47,7 @@
         float: left;
         border: 1px solid green;
         font-size: 35px;
+        margin: 0;
       }
 
       li {
@@ -109,9 +104,13 @@
         /* justify-content: right;
         align-items: center; */
         background-color: white;
-        width: 30%;
-        height: 700px;
-        margin-left: auto;
+        width: 500px;
+        height: 500px;
+        /* margin-left: auto; */
+        position: relative;
+        float: right;
+        top: -30%;
+        right: 10%;
       }
     </style>
   </head>
@@ -122,19 +121,18 @@
         data-marker 역 구분 (환승역 / 일반역)
         data-dir 곡선    
     -->
-
+  <h2 id="title">ㅇㄹㄲ</h2>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Seoul_Station.html">1111</a></li>
+        <li><a href="">22</a></li>
+        <li><a href="">333</a></li>
+        <li><a href="">44444</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
-    <h2 id="title">ㅇㄹㄲ</h2>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="Seoul_Station.html">1111</a></li>
-          <li><a href="">22</a></li>
-          <li><a href="">333</a></li>
-          <li><a href="">44444</a></li>
-        </ul>
-      </nav>
-    </header>
     <div
       class="subway-map"
       data-columns="35"
@@ -171,7 +169,7 @@
         <li data-coords="28,11"><a>20</a></li>
         <li data-coords="26,11"><a>21</a></li>
         <li data-coords="24,11" data-marker="interchange">
-          <a href="test.html">22</a>
+          <a href="SouthGwangJu.html">남광주</a>
         </li>
         <li data-coords="22,11"><a>23</a></li>
         <li data-coords="20,11"><a>24</a></li>
@@ -182,7 +180,9 @@
         <li data-coords="10,11"><a>29</a></li>
         <li data-coords="8,11"><a>30</a></li>
         <li data-coords="6,11"><a>31</a></li>
-        <li data-coords="4,11" data-marker="interchange"><a>32</a></li>
+        <li data-coords="4,11" data-marker="interchange">
+          <a href="SangMu.html">상무</a>
+        </li>
         <li data-coords="2,11"><a>33</a></li>
         <li data-coords="1,10" data-dir="W"></li>
         <li data-coords="1,9"><a>34</a></li>
@@ -192,14 +192,21 @@
         <li data-coords="2,2" data-dir="N"></li>
       </ul>
 
-      <ul data-color="#36AEFF">
-        <li data-coords="18,11"></li>
+      <ul data-color="#36AEFF" data-label="2호선">
+        <li data-coords="6,14">25</li>
+        <li data-coords="8,14">56</li>
+        <li data-coords="10,14">57</li>
+        <li data-coords="12,14">58</li>
+        <li data-coords="14,14">59</li>
+        <li data-coords="16,14">60</li>
+        <li data-coords="18,14">61</li>
+        <!-- <li data-coords="18,11"></li>
         <li data-coords="16,14"><a>56</a></li>
         <li data-coords="14,17"><a>57</a></li>
         <li data-coords="12,20"><a>58</a></li>
         <li data-coords="10,23"><a>59</a></li>
         <li data-coords="8,26"><a>60</a></li>
-        <li data-coords="6,29"><a>61</a></li>
+        <li data-coords="6,29"><a>61</a></li> -->
       </ul>
 
       <ul data-color="#FF7936 " data-label="1호선" data-shiftCoords="0,-1">
@@ -227,10 +234,8 @@
         <li data-coords="4,21"><a>54</a></li>
         <li data-coords="4,23"><a>55</a></li>
       </ul>
-      <div class="click_box"></div>
     </div>
-
-    <!-- <div id="legend"></div> -->
+    <div class="click_box"></div>
 
     <script type="text/javascript">
       $(".subway-map").subwayMap({ debug: true });
